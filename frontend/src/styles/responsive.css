@@ -1,0 +1,75 @@
+/* ── Desktop (≥1440px) ── */
+@media (min-width: 1440px) {
+  .model-two-col {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: var(--spacing-3);
+    align-items: start;
+  }
+}
+
+/* ── Tablet (≥768px) ── */
+@media (min-width: 768px) {
+  .tab-bar-desktop { display: flex; }
+  .tab-bar-mobile  { display: none; }
+}
+
+/* ── Mobile (<768px) ── */
+@media (max-width: 767px) {
+  .tab-bar-desktop { display: none; }
+  .tab-bar-mobile  { display: block; }
+
+  .app-main {
+    padding: var(--spacing-2);
+  }
+
+  .card {
+    padding: var(--spacing-2);
+  }
+
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    max-height: 95vh;
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .score-card__value {
+    font-size: 2.25rem;
+  }
+
+  .data-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .app-header__subtitle {
+    display: none;
+  }
+}
+
+/* ── Smallest mobile (≤375px) ── */
+@media (max-width: 375px) {
+  .app-header__file-badge {
+    max-width: 120px;
+    font-size: 0.7rem;
+  }
+
+  .score-card__value {
+    font-size: 2rem;
+  }
+}
+
+/* ── Chart responsiveness ── */
+.recharts-responsive-container {
+  min-width: 0;
+}
+
+/* Correlation heatmap scroll at small widths */
+.heatmap-scroll {
+  overflow-x: auto;
+}

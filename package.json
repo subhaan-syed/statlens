@@ -1,0 +1,16 @@
+{
+  "name": "statlens",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --names \"API,UI\" --prefix-colors \"blue,green\" \"cd backend && uv run uvicorn app.main:app --reload --port 8000\" \"cd frontend && npm run dev\"",
+    "test:backend": "cd backend && uv run pytest tests/ -v",
+    "test:frontend": "cd frontend && npm run test",
+    "test:e2e": "cd frontend && npx playwright test",
+    "test:all": "npm run test:backend && npm run test:frontend",
+    "install:all": "cd frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
