@@ -1,6 +1,6 @@
 # StatLens: ML Experimentation Toolkit
 
-StatLens is an interactive machine learning platform that lets you upload a CSV, profile your data visually, train models with live hyperparameter tuning, compare experiments, and export a polished Excel report. Designed for rapid experimentation and streamlined ML workflow, it lets recruiters and hiring managers quickly see data science skills in action.
+StatLens is an interactive machine learning platform that lets you upload a CSV, profile your data visually, train models with live hyperparameter tuning, compare experiments, and export a polished Excel report. Designed for rapid experimentation and streamlined ML workflow.
 
 ---
 
