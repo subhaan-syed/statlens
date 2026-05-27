@@ -1,4 +1,4 @@
-# 🔬 StatLens — ML Experimentation Toolkit
+# StatLens: ML Experimentation Toolkit
 
 An interactive machine learning platform that lets you upload a CSV, profile your data visually, train models with live hyperparameter tuning, compare experiments, and export a polished Excel report — all in one browser tab.
 
@@ -41,7 +41,7 @@ Upload the included `sample_data.csv` (200 synthetic employee records) to see ev
 
 ## Feature Walkthrough
 
-### 📂 Step 1 — Upload CSV
+### Step 1 Upload CSV
 
 Drag-and-drop or click to select a CSV file (up to 100 MB). StatLens auto-detects column types:
 
@@ -54,13 +54,13 @@ Drag-and-drop or click to select a CSV file (up to 100 MB). StatLens auto-detect
 
 > **Screenshot placeholder**: *Upload zone with drag-and-drop*
 
-### ⚙️ Step 2 — Configure Columns
+### Step 2 Configure Columns
 
 After upload, a configuration form shows all auto-detected types. You can override any type and must select a **target column** (what the model will predict). Inline validation prevents you from proceeding with invalid settings.
 
 > **Screenshot placeholder**: *Column configuration form with target selector*
 
-### 📊 EDA Tab — Explore Data
+### EDA Tab: Explore Data
 
 Five automatically generated charts:
 
@@ -74,29 +74,29 @@ Five automatically generated charts:
 
 > **Screenshot placeholder**: *EDA tab showing histograms and correlation heatmap*
 
-### 🤖 Model Tab — Train & Tune
+### Model Tab: Train & Tune
 
 1. **Select a model** (StatLens picks regression or classification automatically based on your target column)
-2. **Adjust hyperparameters** with sliders — retraining fires only when you release the slider, keeping the UI responsive
-3. **Read the results** — score card (R² or accuracy), feature importance chart, confusion matrix (classification) or residuals plot (regression)
+2. **Adjust hyperparameters** with sliders, retraining fires only when you release the slider, keeping the UI responsive
+3. **Read the results**, score card (R² or accuracy), feature importance chart, confusion matrix (classification) or residuals plot (regression)
 
 When a retrain starts, your previous results stay visible but dimmed. A latency badge shows how long the retrain took (green < 2 s, amber 2–5 s, red > 5 s).
 
 > **Screenshot placeholder**: *Model tab with score card and feature importance chart*
 
-### 📋 Experiment History Tab
+### Experiment History Tab
 
 Every training run is saved automatically. The table shows all past experiments with their scores. The best run is highlighted in green. Select any two runs and click **Compare** to see their hyperparameters side-by-side in a modal.
 
 > **Screenshot placeholder**: *Experiment history table with compare modal*
 
-### 📥 Export Report
+### Export Report
 
 Click **Export Report** (header or Model tab) to download a formatted `.xlsx` file with four sheets:
 
 | Sheet | Contents |
 |-------|---------|
-| **Data Profile** | Column stats — type, null%, min/max/mean/std, top value |
+| **Data Profile** | Column stats type, null%, min/max/mean/std, top value |
 | **Correlations** | Full Pearson matrix with color-coded cells |
 | **Model Results** | Best experiment's hyperparams, score, feature importances |
 | **Experiment History** | All runs for this file |
@@ -106,17 +106,17 @@ Click **Export Report** (header or Model tab) to download a formatted `.xlsx` fi
 ## Model Types Explained (Plain English)
 
 ### Linear / Logistic Regression
-The simplest model — draws a straight line (or decision boundary) through your data. Fast to train, easy to explain, and a great baseline. **Best for**: data where relationships are roughly linear.
+The simplest model draws a straight line (or decision boundary) through your data. Fast to train, easy to explain, and a great baseline. **Best for**: data where relationships are roughly linear.
 
 **Hyperparameter C**: Controls how strictly the model avoids overfitting. Higher C = more flexible but risks memorising the training data.
 
 ### Random Forest
 Builds hundreds of decision trees on random subsets of your data, then averages their predictions. Handles non-linear patterns and messy real-world data well, and automatically ranks feature importance. **Best for**: general-purpose prediction with tabular data.
 
-**n_estimators**: More trees = more stable predictions (but slower). **max_depth**: How deep each tree grows — shallower trees generalise better.
+**n_estimators**: More trees = more stable predictions (but slower). **max_depth**: How deep each tree grows shallower trees generalise better.
 
 ### Gradient Boosting
-Also uses decision trees, but builds them *sequentially* — each tree corrects the mistakes of the previous one. Often the highest accuracy of the four options. **Best for**: competitions and situations where maximum accuracy matters.
+Also uses decision trees, but builds them *sequentially* each tree corrects the mistakes of the previous one. Often the highest accuracy of the four options. **Best for**: competitions and situations where maximum accuracy matters.
 
 **learning_rate**: How much each new tree contributes. Smaller = safer but needs more trees.
 
